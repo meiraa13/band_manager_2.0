@@ -1,15 +1,24 @@
-﻿Album QueenAlbum = new Album();
-QueenAlbum.Name = "A night at the opera";
+﻿Album QueenAlbum = new("A night at the opera");
 
-Music music1 = new Music();
-music1.Name = "Love of my life";
-music1.Duration = 213;
+Band queen = new("Queen");
 
-Music music2 = new Music();
-music2.Name = "Bohemian Rhapsody";
-music2.Duration = 420;
+Music music1 = new(queen, "Love of my life")
+{
+    Duration = 213,
+    Available = true,
+};
+
+Music music2 = new(queen, "Bohemian Rhapsody")
+{
+    Duration = 315,
+    Available = false,
+};
+
+music1.ShowInfo();
+queen.AddAlbum(QueenAlbum);
+queen.ShowDiscography();
 
 QueenAlbum.AddMusic(music1);
 QueenAlbum.AddMusic(music2);
-
 QueenAlbum.ShowAlbumMusic();
+
