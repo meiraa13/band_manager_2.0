@@ -1,24 +1,11 @@
-﻿Album QueenAlbum = new("A night at the opera");
+﻿Episode ep1 = new(1, "teste", 20);
+ep1.AddGuest("alcione, keila");
 
-Band queen = new("Queen");
 
-Music music1 = new(queen, "Love of my life")
-{
-    Duration = 213,
-    Available = true,
-};
+Episode ep2 = new(1, "teste2", 20);
+ep2.AddGuest("marcelo");
 
-Music music2 = new(queen, "Bohemian Rhapsody")
-{
-    Duration = 315,
-    Available = false,
-};
-
-music1.ShowInfo();
-queen.AddAlbum(QueenAlbum);
-queen.ShowDiscography();
-
-QueenAlbum.AddMusic(music1);
-QueenAlbum.AddMusic(music2);
-QueenAlbum.ShowAlbumMusic();
-
+Podcast podcast1 = new("Primeiro podcast", "Eduardo");
+podcast1.AddEpisode(ep1);
+podcast1.AddEpisode(ep2);
+podcast1.ShowDetail();
